@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define a node
+
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Insert a node at the beginning
+
 void insertAtBeginning(struct Node** head, int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
 
@@ -17,20 +17,20 @@ void insertAtBeginning(struct Node** head, int value) {
     *head = newNode;
 }
 
-// Insert a node at the end
+
 void insertAtEnd(struct Node** head, int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
 
     newNode->data = value;
     newNode->next = NULL;
 
-    // If list is empty
+   
     if (*head == NULL) {
         *head = newNode;
         return;
     }
 
-    // Find the last node
+   
     struct Node* temp = *head;
 
     while (temp->next != NULL) {
@@ -52,7 +52,6 @@ void display(struct Node* head) {
     printf("NULL\n");
 }
 
-// Delete the first node
 void deleteFromBeginning(struct Node** head) {
     if (*head == NULL) {
         printf("List is empty!\n");
